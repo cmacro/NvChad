@@ -14,9 +14,18 @@ return {
     },
 
     {
+        "williamboman/mason-lspconfig.nvim",
+        event = "VeryLazy",
+        dependencies = { "nvim-lspconfig" },
+        config = function()
+            require("configs.mason-lspconfig")
+        end,
+    },
+
+    {
         "nvim-treesitter/nvim-treesitter",
         event = { "BufReadPre", "BufNewFile" },
-        config = function ()
+        config = function()
             require("configs.treesitter")
         end
     },

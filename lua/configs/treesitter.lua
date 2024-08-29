@@ -5,6 +5,8 @@ local options = {
     -- "cmake",
     -- "cpp",
     -- "fish",
+    "html",
+    "css",
     "go",
     "gomod",
     "gosum",

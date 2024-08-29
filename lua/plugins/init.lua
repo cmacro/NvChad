@@ -57,6 +57,35 @@ return {
   },
 
   {
+    "mfussenegger/nvim-dap",
+    -- init = function()
+    --   require("core.util").load_mappings "dap"
+    -- end,
+  },
+  {
+    "leoluz/nvim-dap-go",
+    ft = "go",
+    dependencies = "mfussenegger/nvim-dap",
+    keys = {
+      ["<leader>dgt"] = {
+        function()
+          require("dap-go").debug_test()
+        end,
+        "Debug go test",
+      },
+      ["<leader>dgl"] = {
+        function()
+          require("dap-go").debug_last()
+        end,
+        "Debug last go test",
+      },
+    },
+    config = function(_, opts)
+      require("dap-go").setup(opts)
+    end,
+  },
+
+  {
 
     "nvim-tree/nvim-tree.lua",
     opts = {
